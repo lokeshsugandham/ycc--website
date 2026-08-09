@@ -1,0 +1,1201 @@
+/* ==========================================================================
+   Yuva Chaitanya Charitable Trust - Modern & Realistic Stylesheet
+   Regd. No.: 278/2017 | Visakhapatnam, AP, India
+   ========================================================================== */
+
+:root {
+  --primary-blue: #0056b3;
+  --primary-dark: #003366;
+  --primary-cyan: #00a8e8;
+  --accent-gold: #ffb703;
+  --accent-orange: #fb8500;
+  --success-green: #2a9d8f;
+  --danger-red: #e63946;
+  --bg-light: #f8fafc;
+  --bg-card: #ffffff;
+  --text-dark: #0f172a;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+  
+  --font-sans: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 25px rgba(0, 86, 179, 0.12);
+  --shadow-xl: 0 20px 35px rgba(0, 0, 0, 0.15);
+  
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Base Resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Top Notification / 80G Bar */
+.top-notice-bar {
+  background: linear-gradient(90deg, #002855 0%, #0056b3 100%);
+  color: #ffffff;
+  padding: 8px 0;
+  font-size: 0.88rem;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.top-notice-bar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.top-notice-left, .top-notice-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.badge-80g-pill {
+  background: var(--accent-gold);
+  color: #000;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.top-contact-link {
+  color: #ffffff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: var(--transition);
+}
+
+.top-contact-link:hover {
+  color: var(--accent-gold);
+}
+
+/* Main Container */
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Trust Header Photo Banner Section */
+.trust-banner-wrapper {
+  background: #ffffff;
+  padding: 12px 0;
+  box-shadow: var(--shadow-sm);
+  border-bottom: 2px solid var(--primary-cyan);
+}
+
+.banner-img-container {
+  width: 100%;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  background: #e6f4f9;
+  text-align: center;
+}
+
+.banner-img-container img {
+  width: 100%;
+  max-height: 220px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Header & Navigation */
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  gap: 20px;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.brand-logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--primary-blue);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.brand-info h1 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+  line-height: 1.2;
+  letter-spacing: -0.3px;
+}
+
+.brand-info p {
+  font-size: 0.75rem;
+  color: var(--primary-blue);
+  font-weight: 600;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+  margin-left: auto;
+  margin-right: 35px; /* Creates explicit clean gap between Contact menu item and Login/Register button */
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: var(--transition);
+  position: relative;
+  padding: 6px 0;
+  white-space: nowrap;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--primary-blue);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary-blue);
+  transition: var(--transition);
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+  width: 100%;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+/* Custom Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 22px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 0.92rem;
+  cursor: pointer;
+  border: none;
+  transition: var(--transition);
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-blue), #0077e6);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(0, 86, 179, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 86, 179, 0.45);
+  background: linear-gradient(135deg, #004494, var(--primary-blue));
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, var(--accent-gold), var(--accent-orange));
+  color: #000000;
+  box-shadow: 0 4px 14px rgba(251, 133, 0, 0.3);
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(251, 133, 0, 0.45);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--primary-blue);
+  color: var(--primary-blue);
+}
+
+.btn-outline:hover {
+  background: var(--primary-blue);
+  color: #ffffff;
+}
+
+.btn-sm {
+  padding: 6px 14px;
+  font-size: 0.85rem;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* Mobile Nav Toggle */
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  cursor: pointer;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  padding: 60px 0 80px;
+  background: radial-gradient(circle at 10% 20%, rgba(0, 168, 232, 0.08) 0%, rgba(0, 86, 179, 0.03) 90%);
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #e0f2fe;
+  color: var(--primary-dark);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  border: 1px solid #bae6fd;
+}
+
+.hero-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+  line-height: 1.15;
+  margin-bottom: 18px;
+}
+
+.hero-title span {
+  color: var(--primary-blue);
+  background: linear-gradient(135deg, var(--primary-blue), var(--primary-cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 28px;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 25px;
+  margin-top: 30px;
+  padding-top: 25px;
+  border-top: 1px solid var(--border-color);
+}
+
+.stat-item h4 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--primary-blue);
+}
+
+.stat-item p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+/* Quick Donation Card inside Hero */
+.hero-donate-card {
+  background: var(--bg-card);
+  padding: 30px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  border: 1px solid rgba(0, 168, 232, 0.2);
+  position: relative;
+}
+
+.card-header-tag {
+  position: absolute;
+  top: -12px;
+  right: 25px;
+  background: var(--accent-gold);
+  color: #000;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 12px;
+  text-transform: uppercase;
+}
+
+.hero-donate-card h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--primary-dark);
+}
+
+.hero-donate-card p.subtitle {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+/* Donation Form Elements */
+.amount-presets {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.preset-btn {
+  background: #f1f5f9;
+  border: 1.5px solid var(--border-color);
+  padding: 10px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 0.92rem;
+}
+
+.preset-btn:hover, .preset-btn.active {
+  background: #e0f2fe;
+  border-color: var(--primary-blue);
+  color: var(--primary-blue);
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--text-dark);
+}
+
+.input-with-symbol {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-symbol {
+  position: absolute;
+  left: 14px;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: var(--transition);
+}
+
+.input-with-symbol .form-control {
+  padding-left: 32px;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.15);
+}
+
+.amount-limit-hint {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.amount-limit-hint.error {
+  color: var(--danger-red);
+  font-weight: 700;
+}
+
+/* 80G Tax Section */
+.tax-section {
+  padding: 70px 0;
+  background: #ffffff;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 50px;
+}
+
+.section-tag {
+  color: var(--primary-blue);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+  margin-bottom: 12px;
+}
+
+.section-subtitle {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.tax-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.tax-card-info {
+  background: linear-gradient(145deg, #f0f7ff 0%, #e6f0fa 100%);
+  border: 1px solid #cce3f5;
+  border-radius: var(--radius-lg);
+  padding: 35px;
+}
+
+.tax-card-info h3 {
+  font-size: 1.5rem;
+  color: var(--primary-dark);
+  margin-bottom: 15px;
+  font-weight: 800;
+}
+
+.tax-benefit-list {
+  list-style: none;
+  margin: 20px 0;
+}
+
+.tax-benefit-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
+  font-size: 0.95rem;
+}
+
+.tax-benefit-list li i {
+  color: var(--success-green);
+  font-size: 1.1rem;
+  margin-top: 2px;
+}
+
+/* Tax Savings Interactive Calculator */
+.calc-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: 30px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color);
+}
+
+.calc-card h3 {
+  font-size: 1.3rem;
+  color: var(--primary-dark);
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.calc-results {
+  background: #f8fafc;
+  border-radius: var(--radius-md);
+  padding: 20px;
+  margin-top: 20px;
+  border: 1px solid var(--border-color);
+}
+
+.calc-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 0.92rem;
+}
+
+.calc-row.highlight {
+  border-top: 1px dashed var(--border-color);
+  padding-top: 10px;
+  margin-top: 10px;
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: var(--primary-blue);
+}
+
+/* Causes Section */
+.causes-section {
+  padding: 70px 0;
+  background: var(--bg-light);
+}
+
+.causes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.cause-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.cause-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+}
+
+.cause-img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.cause-content {
+  padding: 24px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cause-content h4 {
+  font-size: 1.2rem;
+  color: var(--primary-dark);
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.cause-content p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 18px;
+  flex-grow: 1;
+}
+
+.progress-bar-wrap {
+  background: #e2e8f0;
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.progress-bar {
+  background: linear-gradient(90deg, var(--primary-cyan), var(--primary-blue));
+  height: 100%;
+  border-radius: 4px;
+}
+
+.cause-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+/* Founder & Management Section */
+.about-section {
+  padding: 70px 0;
+  background: #ffffff;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.founder-card {
+  text-align: center;
+  background: #f8fafc;
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-md);
+}
+
+.founder-img {
+  width: 180px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  margin: 0 auto 16px;
+  border: 3px solid var(--primary-blue);
+  box-shadow: var(--shadow-md);
+}
+
+.founder-card h4 {
+  font-size: 1.15rem;
+  color: var(--primary-dark);
+  font-weight: 800;
+}
+
+.founder-card p {
+  font-size: 0.85rem;
+  color: var(--primary-blue);
+  font-weight: 600;
+}
+
+.about-text h3 {
+  font-size: 2rem;
+  color: var(--primary-dark);
+  margin-bottom: 16px;
+  font-weight: 800;
+}
+
+.about-text p {
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  font-size: 1rem;
+}
+
+.trust-details-box {
+  background: #e0f2fe;
+  padding: 20px;
+  border-radius: var(--radius-md);
+  margin-top: 20px;
+  border-left: 4px solid var(--primary-blue);
+}
+
+.trust-details-box p {
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+  color: var(--primary-dark);
+
+}
+
+/* Contact Section */
+.contact-section {
+  padding: 70px 0;
+  background: var(--bg-light);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.contact-info-card {
+  background: var(--bg-card);
+  padding: 30px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.info-item {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.info-icon {
+  width: 48px;
+  height: 48px;
+  background: #e0f2fe;
+  color: var(--primary-blue);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.info-text h5 {
+  font-size: 1.05rem;
+  color: var(--primary-dark);
+  margin-bottom: 4px;
+}
+
+.info-text p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* Modals System (Login, Register, Donate, 80G Receipt) */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(6px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+  padding: 20px;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 540px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  overflow: hidden;
+  transform: translateY(20px) scale(0.95);
+  transition: var(--transition);
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-overlay.active .modal-card {
+  transform: translateY(0) scale(1);
+}
+
+.modal-header {
+  padding: 20px 25px;
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary-blue));
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1.4rem;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: var(--transition);
+}
+
+.modal-close:hover {
+  opacity: 1;
+}
+
+.modal-body {
+  padding: 25px;
+  overflow-y: auto;
+}
+
+/* Payment Tabs inside Donate Modal */
+.payment-methods {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.payment-tab {
+  border: 1.5px solid var(--border-color);
+  padding: 12px;
+  border-radius: var(--radius-sm);
+  text-align: center;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.payment-tab:hover, .payment-tab.active {
+  border-color: var(--primary-blue);
+  background: #e0f2fe;
+  color: var(--primary-blue);
+}
+
+.payment-tab i {
+  display: block;
+  font-size: 1.3rem;
+  margin-bottom: 4px;
+}
+
+.qr-box {
+  text-align: center;
+  background: #f8fafc;
+  padding: 20px;
+  border-radius: var(--radius-md);
+  border: 1.5px dashed var(--primary-blue);
+  margin: 15px 0;
+}
+
+.qr-code-img {
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 10px;
+  display: block;
+}
+
+/* Official 80G Receipt Modal Styling */
+.receipt-modal-card {
+  max-width: 720px;
+}
+
+.receipt-document {
+  background: #ffffff;
+  border: 2px solid var(--primary-blue);
+  padding: 30px;
+  border-radius: var(--radius-md);
+  position: relative;
+  font-size: 0.9rem;
+}
+
+.receipt-header-logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--primary-blue);
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.receipt-header-logo img {
+  height: 60px;
+}
+
+.receipt-title-box {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.receipt-title-box h2 {
+  font-size: 1.3rem;
+  color: var(--primary-dark);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.receipt-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.receipt-table th, .receipt-table td {
+  border: 1px solid #cbd5e1;
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.receipt-table th {
+  background: #f1f5f9;
+  font-weight: 700;
+}
+
+.receipt-footer-stamp {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid var(--border-color);
+}
+
+.digital-stamp {
+  border: 2px dashed var(--success-green);
+  color: var(--success-green);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+/* User Account Dashboard Panel */
+.dashboard-modal-card {
+  max-width: 800px;
+}
+
+.history-table-wrap {
+  overflow-x: auto;
+  margin-top: 15px;
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.history-table th, .history-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border-color);
+  text-align: left;
+}
+
+.history-table th {
+  background: #f8fafc;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+/* Notification Toast */
+.toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 3000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.toast {
+  background: var(--text-dark);
+  color: #ffffff;
+  padding: 14px 20px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  animation: slideInRight 0.3s ease;
+  max-width: 380px;
+}
+
+.toast.success {
+  background: var(--success-green);
+}
+
+.toast.error {
+  background: var(--danger-red);
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* Footer */
+.main-footer {
+  background: var(--primary-dark);
+  color: #ffffff;
+  padding: 60px 0 20px;
+  font-size: 0.9rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-brand h3 {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+.footer-brand p {
+  color: #e2e8f0;
+  margin-bottom: 16px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.footer-links h4 {
+  font-size: 1.05rem;
+  margin-bottom: 16px;
+  color: var(--accent-gold);
+  font-weight: 800;
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #f1f5f9;
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.footer-links a:hover {
+  color: var(--accent-gold);
+  padding-left: 4px;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 20px;
+  text-align: center;
+  color: #cbd5e1;
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+/* Print Styles for 80G Tax Exemption Receipt */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #receiptPrintArea, #receiptPrintArea * {
+    visibility: visible;
+  }
+  #receiptPrintArea {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    border: none;
+    box-shadow: none;
+  }
+  .modal-header, .modal-close, .no-print {
+    display: none !important;
+  }
+}
+
+/* Responsive Media Queries */
+@media (max-width: 992px) {
+  .hero-grid, .tax-grid, .about-grid, .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .about-grid {
+    text-align: center;
+  }
+  
+  .founder-img {
+    margin: 0 auto 16px;
+  }
+  
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none; /* Can be toggled via JS */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .nav-menu.active {
+    display: flex;
+  }
+  
+  .mobile-toggle {
+    display: block;
+  }
+  
+  .hero-title {
+    font-size: 2.1rem;
+  }
+  
+  .amount-presets {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
