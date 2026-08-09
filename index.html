@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yuva Chaitanya Charitable Trust | Regd. No. 278/2017 | 80G Tax Exempted Donations</title>
+  <meta name="description" content="Official website of Yuva Chaitanya Charitable Trust, Visakhapatnam. Donate to child education, healthcare camps, and social welfare. All donations eligible for 50% tax exemption under Section 80G.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Top Announcement / 80G Notice Bar -->
+  <div class="top-notice-bar">
+    <div class="container">
+      <div class="top-notice-left">
+        <span class="badge-80g-pill"><i class="fas fa-shield-alt"></i> 80G TAX EXEMPTED</span>
+        <span>All donations eligible for 50% Tax Exemption under Sec 80G of IT Act</span>
+      </div>
+      <div class="top-notice-right">
+        <a href="tel:9010256292" class="top-contact-link"><i class="fas fa-phone-alt"></i> +91 9010256292</a>
+        <a href="tel:9849022439" class="top-contact-link"><i class="fas fa-phone-alt"></i> +91 9849022439</a>
+        <a href="mailto:ycctrust2017@gmail.com" class="top-contact-link"><i class="fas fa-envelope"></i> ycctrust2017@gmail.com</a>
+      </div>
+    </div>
+  </div>
+  <!-- Main Navigation Bar -->
+  <header class="main-header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="#home" class="nav-brand">
+          <img src="images/logo.jpg" alt="YCC Logo" class="brand-logo">
+          <div class="brand-info">
+            <h1>YUVA CHAITANYA CHARITABLE TRUST</h1>
+            <p>Regd. No.: 278/2017 &bull; A Call to Serve (ESTD: 2017)</p>
+          </div>
+        </a>
+
+        <!-- Navigation Menu with generous margin-right gap before Login/Register -->
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About Trust</a></li>
+          <li><a href="#causes" class="nav-link">Our Causes</a></li>
+          <li><a href="#tax-benefits" class="nav-link">80G Benefits</a></li>
+          <li><a href="#tax-calculator" class="nav-link">Tax Calculator</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <!-- Action Buttons -->
+        <div class="nav-actions">
+          <button class="btn btn-outline" id="authNavBtn" onclick="openLoginModal()" style="padding: 8px 18px;">
+            <i class="fas fa-user"></i> Login / Register
+          </button>
+          <button class="btn btn-gold" onclick="triggerDonateModal(1000, 'General Trust Fund')" style="padding: 8px 20px;">
+            <i class="fas fa-heart"></i> Donate Now
+          </button>
+          <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="home">
+    <div class="container">
+      <div class="hero-grid">
+        <!-- Hero Text -->
+        <div class="hero-text-content">
+          <div class="hero-badge">
+            <i class="fas fa-certificate"></i> Government Approved 80G Certified Non-Profit
+          </div>
+          <h2 class="hero-title">
+            Transform Lives With <span>Your Kindness</span> & Save Tax
+          </h2>
+          <p class="hero-description">
+            Join hands with Yuva Chaitanya Charitable Trust (Regd. No. 278/2017) to provide quality education, free medical camps, and essential relief to underprivileged communities in Visakhapatnam & AP.
+          </p>
+          
+          <div class="hero-cta-group" style="display: flex; gap: 15px; flex-wrap: wrap;">
+            <button class="btn btn-primary" onclick="triggerDonateModal(2500, 'Child Education')">
+              <i class="fas fa-hand-holding-heart"></i> Donate & Save Tax
+            </button>
+            <a href="#tax-calculator" class="btn btn-outline">
+              <i class="fas fa-calculator"></i> Calculate Tax Savings
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <h4>15,000+</h4>
+              <p>Lives Impacted</p>
+            </div>
+            <div class="stat-item">
+              <h4>120+</h4>
+              <p>Medical Camps</p>
+            </div>
+            <div class="stat-item">
+              <h4>500+</h4>
+              <p>Children Educated</p>
+            </div>
+            <div class="stat-item">
+              <h4>50%</h4>
+              <p>80G Tax Deduction</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Quick Donation Widget -->
+        <div class="hero-donate-card">
+          <div class="card-header-tag">80G INSTANT RECEIPT</div>
+          <h3>Make an Immediate Impact</h3>
+          <p class="subtitle">Select an amount (₹10 to ₹1,00,000) to contribute today</p>
+
+          <div class="form-group">
+            <label>Choose Preset Amount (₹)</label>
+            <div class="amount-presets">
+              <button class="preset-btn hero-preset-btn" data-amount="500">₹500</button>
+              <button class="preset-btn hero-preset-btn active" data-amount="1000">₹1,000</button>
+              <button class="preset-btn hero-preset-btn" data-amount="5000">₹5,000</button>
+              <button class="preset-btn hero-preset-btn" data-amount="10000">₹10,000</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="heroCustomAmount">Or Enter Custom Amount (₹)</label>
+            <div class="input-with-symbol">
+              <span class="input-symbol">₹</span>
+              <input type="number" id="heroCustomAmount" class="form-control" value="1000" min="10" max="100000" placeholder="Min ₹10 - Max ₹1,00,000">
+            </div>
+            <div class="amount-limit-hint" id="heroAmountError">
+              <span>Minimum: ₹10</span>
+              <span>Maximum: ₹1,00,000 (1 Lakh)</span>
+            </div>
+          </div>
+
+          <button class="btn btn-gold btn-block" style="padding: 14px; font-size: 1rem;" onclick="triggerDonateModal(document.getElementById('heroCustomAmount').value, 'General Trust Fund')">
+            <i class="fas fa-lock"></i> Proceed to Donate & Get 80G Receipt
+          </button>
+
+          <div style="text-align: center; margin-top: 14px; font-size: 0.8rem; color: var(--text-muted);">
+            <i class="fas fa-shield-alt" style="color: var(--success-green);"></i> 100% Encrypted Payment &bull; Instant Official Tax Exemption PDF
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 80G Tax Benefits & Calculator Section -->
+  <section class="tax-section" id="tax-benefits">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Section 80G Benefits</span>
+        <h2 class="section-title">Save Income Tax While Helping Society</h2>
+        <p class="section-subtitle">Under Section 80G of the Indian Income Tax Act, 1961, all donations made to Yuva Chaitanya Charitable Trust are eligible for 50% Tax Deduction.</p>
+      </div>
+
+      <div class="tax-grid">
+        <!-- Tax Info Card -->
+        <div class="tax-card-info">
+          <h3>Why Donate to YCC Trust?</h3>
+          <ul class="tax-benefit-list">
+            <li>
+              <i class="fas fa-check-circle"></i>
+              <div>
+                <strong>50% Deduction on Taxable Income:</strong> Reduce your taxable income by half of the donated amount.
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i>
+              <div>
+                <strong>Instant Official 80G Receipt:</strong> Download fully formatted 80G receipt with PAN details immediately after payment.
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i>
+              <div>
+                <strong>Valid for Individuals & Corporates:</strong> Salaried employees, self-employed individuals, and companies can claim benefits.
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i>
+              <div>
+                <strong>100% Transparency & Direct Impact:</strong> Trust Regd. No. 278/2017 registered in Visakhapatnam, Andhra Pradesh.
+              </div>
+            </li>
+          </ul>
+
+          <div class="trust-details-box">
+            <p><strong>Trust Regd. No.:</strong> 278/2017</p>
+            <p><strong>80G Unique Regd.:</strong> AAATY2781F20174</p>
+            <p><strong>PAN Card Required:</strong> Yes (Required for 80G Certificate)</p>
+          </div>
+        </div>
+
+        <!-- Interactive 80G Calculator -->
+        <div class="calc-card" id="tax-calculator">
+          <h3><i class="fas fa-calculator" style="color: var(--primary-blue);"></i> 80G Tax Savings Calculator</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 16px;">Calculate your exact tax savings based on your donation amount and income tax bracket.</p>
+
+          <div class="form-group">
+            <label for="calcAmount">Your Proposed Donation Amount (₹)</label>
+            <div class="input-with-symbol">
+              <span class="input-symbol">₹</span>
+              <input type="number" id="calcAmount" class="form-control" value="10000" min="10" max="100000">
+            </div>
+            <span style="font-size: 0.78rem; color: var(--text-muted);">Allowed Range: ₹10 to ₹1,00,000</span>
+          </div>
+
+          <div class="form-group">
+            <label for="calcSlab">Your Income Tax Slab</label>
+            <select id="calcSlab" class="form-control">
+              <option value="0.30">30% Tax Slab (High Income / Corporate)</option>
+              <option value="0.20">20% Tax Slab (Middle Income)</option>
+              <option value="0.10">10% Tax Slab (Lower Income)</option>
+            </select>
+          </div>
+
+          <div class="calc-results">
+            <div class="calc-row">
+              <span>Donation Amount:</span>
+              <strong id="resDonationAmt">₹10,000</strong>
+            </div>
+            <div class="calc-row">
+              <span>Eligible 80G Deduction (50%):</span>
+              <strong id="res80gDeduction">₹5,000</strong>
+            </div>
+            <div class="calc-row">
+              <span>Estimated Tax Saved:</span>
+              <strong id="resTaxSaved" style="color: var(--success-green);">₹1,560</strong>
+            </div>
+            <div class="calc-row highlight">
+              <span>Net Effective Cost to You:</span>
+              <span id="resEffectiveCost">₹8,440</span>
+            </div>
+          </div>
+
+          <button class="btn btn-primary btn-block" style="margin-top: 20px;" onclick="triggerDonateModal(document.getElementById('calcAmount').value, 'General Trust Fund')">
+            <i class="fas fa-heart"></i> Donate ₹<span id="donateCalcBtnText">10,000</span> & Claim 80G Exemption
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Causes Section -->
+  <section class="causes-section" id="causes">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Key Initiatives</span>
+        <h2 class="section-title">Causes You Can Support</h2>
+        <p class="section-subtitle">Every rupee you contribute directly powers critical community welfare projects in Andhra Pradesh.</p>
+      </div>
+
+      <div class="causes-grid">
+        <!-- Cause 1 -->
+        <div class="cause-card">
+          <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80" alt="Child Education" class="cause-img">
+          <div class="cause-content">
+            <h4>Child Education & School Supplies</h4>
+            <p>Providing uniforms, books, bags, and tuition assistance to rural underprivileged students in Visakhapatnam district.</p>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" style="width: 76%;"></div>
+            </div>
+            <div class="cause-meta">
+              <span>Raised: ₹3,80,000</span>
+              <span>Goal: ₹5,00,000</span>
+            </div>
+            <button class="btn btn-outline btn-block" onclick="triggerDonateModal(2500, 'Child Education')">
+              <i class="fas fa-graduation-cap"></i> Support Education
+            </button>
+          </div>
+        </div>
+
+        <!-- Cause 2 -->
+        <div class="cause-card">
+          <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80" alt="Healthcare Camps" class="cause-img">
+          <div class="cause-content">
+            <h4>Free Rural Healthcare & Eye Camps</h4>
+            <p>Organizing free medical checkups, diagnostic camps, and distributing essential medicines for elderly and low-income families.</p>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" style="width: 71%;"></div>
+            </div>
+            <div class="cause-meta">
+              <span>Raised: ₹2,15,000</span>
+              <span>Goal: ₹3,00,000</span>
+            </div>
+            <button class="btn btn-outline btn-block" onclick="triggerDonateModal(3000, 'Healthcare Camps')">
+              <i class="fas fa-stethoscope"></i> Support Healthcare
+            </button>
+          </div>
+        </div>
+
+        <!-- Cause 3 -->
+        <div class="cause-card">
+          <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=600&q=80" alt="Elderly Care" class="cause-img">
+          <div class="cause-content">
+            <h4>Elderly & Destitute Support</h4>
+            <p>Providing monthly grocery kits, warm clothes, and shelter assistance to abandoned elderly citizens in Arilova area.</p>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" style="width: 80%;"></div>
+            </div>
+            <div class="cause-meta">
+              <span>Raised: ₹1,60,000</span>
+              <span>Goal: ₹2,00,000</span>
+            </div>
+            <button class="btn btn-outline btn-block" onclick="triggerDonateModal(1500, 'Elderly Support')">
+              <i class="fas fa-hands-helping"></i> Support Elderly
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder & About Trust Section -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <!-- Founder Portrait Card -->
+        <div class="founder-card">
+          <img src="images/founder.jpg" alt="Yuva Chaitanya Trust Leadership" class="founder-img">
+          <h4>Management & Board</h4>
+          <p>Yuva Chaitanya Charitable Trust</p>
+          <span style="font-size: 0.78rem; color: var(--text-muted);">Est. 2017 &bull; Visakhapatnam</span>
+        </div>
+
+        <!-- About Text -->
+        <div class="about-text">
+          <span class="section-tag">Our History & Governance</span>
+          <h3>Yuva Chaitanya Charitable Trust (A Call to Serve)</h3>
+          <p>
+            Established in the year 2017 under Registration Number <strong>278/2017</strong>, Yuva Chaitanya Charitable Trust has been dedicatedly serving communities across Visakhapatnam and nearby districts of Andhra Pradesh.
+          </p>
+          <p>
+            Our core mission is to bridge the gap in basic education, health services, and social security. We operate with 100% financial transparency and zero overhead waste, ensuring every contribution directly transforms lives.
+          </p>
+          
+          <div class="trust-details-box" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+            <div>
+              <p><strong>Registration No:</strong> 278/2017</p>
+              <p><strong>Tax Status:</strong> 80G Approved Non-Profit</p>
+            </div>
+            <div>
+              <p><strong>Primary Location:</strong> Arilova, Visakhapatnam</p>
+              <p><strong>Contact Numbers:</strong> 9010256292, 9849022439</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recent Donors Transparency Section -->
+  <section style="padding: 60px 0; background: #ffffff; border-top: 1px solid var(--border-color);">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 30px;">
+        <span class="section-tag">Transparency & Trust</span>
+        <h2 class="section-title">Recent 80G Certified Donations</h2>
+      </div>
+
+      <div class="history-table-wrap" style="box-shadow: var(--shadow-sm); border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-color);">
+        <table class="history-table">
+          <thead>
+            <tr>
+              <th>Donor Name</th>
+              <th>Donation Amount</th>
+              <th>Cause Supported</th>
+              <th>80G Tax Exemption Status</th>
+            </tr>
+          </thead>
+          <tbody id="recentDonationsBody">
+            <!-- Dynamically populated via JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Location Section -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Get In Touch</span>
+        <h2 class="section-title">Contact & Visit Our Office</h2>
+        <p class="section-subtitle">We welcome donors, volunteers, and visitors to our registered trust office.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info-card">
+          <div class="info-item">
+            <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="info-text">
+              <h5>Registered Address</h5>
+              <p>Door No. 15-201, Sector-IV, Arilova, Visakhapatnam - 530040, Andhra Pradesh, INDIA.</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
+            <div class="info-text">
+              <h5>Official Contact Numbers</h5>
+              <p>+91 9010256292 | +91 9849022439</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon"><i class="fas fa-envelope"></i></div>
+            <div class="info-text">
+              <h5>Email Address</h5>
+              <p>ycctrust2017@gmail.com</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon"><i class="fas fa-id-card"></i></div>
+            <div class="info-text">
+              <h5>Registration Details</h5>
+              <p>Regd. No.: 278/2017 | ESTD: 2017 | 80G Certified</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Query Form -->
+        <div class="contact-info-card">
+          <h4 style="font-size: 1.2rem; color: var(--primary-dark); margin-bottom: 16px;">Send Us a Message</h4>
+          <form onsubmit="event.preventDefault(); showToast('Thank you for reaching out! We will contact you shortly.', 'success'); this.reset();">
+            <div class="form-group">
+              <label for="contactName">Full Name</label>
+              <input type="text" id="contactName" class="form-control" required placeholder="Enter your full name">
+            </div>
+            <div class="form-group">
+              <label for="contactEmail">Email Address</label>
+              <input type="email" id="contactEmail" class="form-control" required placeholder="Enter your email address">
+            </div>
+            <div class="form-group">
+              <label for="contactMessage">Message / Query</label>
+              <textarea id="contactMessage" class="form-control" rows="4" required placeholder="How can we help you?"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">
+              <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>YUVA CHAITANYA CHARITABLE TRUST</h3>
+          <p>Regd. No.: 278/2017 &bull; Visakhapatnam, Andhra Pradesh, India.</p>
+          <p>Dedicated to social empowerment, education, healthcare, and rural community development since 2017.</p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Trust</a></li>
+            <li><a href="#causes">Our Causes</a></li>
+            <li><a href="#tax-benefits">80G Benefits</a></li>
+            <li><a href="#tax-calculator">Tax Calculator</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Tax Exemption</h4>
+          <ul>
+            <li><a href="#tax-benefits">Section 80G Details</a></li>
+            <li><a href="javascript:void(0)" onclick="openLoginModal()">Donor Login</a></li>
+            <li><a href="javascript:void(0)" onclick="openRegisterModal()">Create Account</a></li>
+            <li><a href="javascript:void(0)" onclick="triggerDonateModal(5000, 'General Trust Fund')">Get 80G Certificate</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Office Address</h4>
+          <p style="color: #cbd5e1; font-size: 0.88rem; line-height: 1.6;">
+            Door No. 15-201, Sector-IV,<br>
+            Arilova, Visakhapatnam - 530040,<br>
+            Andhra Pradesh, INDIA.<br>
+            <strong>Ph:</strong> 9010256292, 9849022439
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Yuva Chaitanya Charitable Trust (Regd. No. 278/2017). All Rights Reserved. 80G Tax Exemption Guaranteed.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== MODALS SYSTEM ==================== -->
+
+  <!-- 1. DONATE MODAL -->
+  <div class="modal-overlay" id="donateModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3><i class="fas fa-heart" style="color: var(--accent-gold);"></i> Make a Tax-Deductible Donation</h3>
+        <button class="modal-close" onclick="closeModal('donateModal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="donateForm" onsubmit="processDonation(event)">
+          <div class="form-group">
+            <label>Select Amount (Min ₹10 - Max ₹1,00,000)</label>
+            <div class="amount-presets">
+              <button type="button" class="preset-btn modal-preset-btn" data-amount="500">₹500</button>
+              <button type="button" class="preset-btn modal-preset-btn active" data-amount="1000">₹1,000</button>
+              <button type="button" class="preset-btn modal-preset-btn" data-amount="5000">₹5,000</button>
+              <button type="button" class="preset-btn modal-preset-btn" data-amount="10000">₹10,000</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="modalCustomAmount">Enter Donation Amount (₹)</label>
+            <div class="input-with-symbol">
+              <span class="input-symbol">₹</span>
+              <input type="number" id="modalCustomAmount" class="form-control" value="1000" min="10" max="100000" required>
+            </div>
+            <div class="amount-limit-hint" id="modalAmountError">
+              <span>Eligible for 50% Tax Exemption under Sec 80G</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="modalCauseSelect">Select Cause</label>
+            <select id="modalCauseSelect" class="form-control">
+              <option value="General Trust Fund">General Trust Welfare Fund</option>
+              <option value="Child Education">Child Education & Supplies</option>
+              <option value="Healthcare Camps">Free Health & Eye Camps</option>
+              <option value="Elderly Support">Elderly & Destitute Support</option>
+            </select>
+          </div>
+
+          <hr style="margin: 20px 0; border: 0; border-top: 1px solid var(--border-color);">
+          <h4 style="font-size: 1rem; color: var(--primary-dark); margin-bottom: 12px;">Donor Information (For 80G Tax Receipt)</h4>
+
+          <div class="form-group">
+            <label for="donorName">Full Name (As per PAN Card)</label>
+            <input type="text" id="donorName" class="form-control" required placeholder="Enter full legal name">
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+            <div class="form-group">
+              <label for="donorEmail">Email Address</label>
+              <input type="email" id="donorEmail" class="form-control" required placeholder="name@domain.com">
+            </div>
+            <div class="form-group">
+              <label for="donorPhone">Phone Number</label>
+              <input type="tel" id="donorPhone" class="form-control" required placeholder="10-digit mobile">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="donorPAN">PAN Card Number (Required for 80G Exemption)</label>
+            <input type="text" id="donorPAN" class="form-control" required placeholder="e.g. ABCDE1234F" style="text-transform: uppercase;" maxlength="10">
+            <span style="font-size: 0.75rem; color: var(--text-muted);">PAN details are mandatory to issue valid 80G Income Tax Certificates.</span>
+          </div>
+
+          <!-- Payment Mode Options -->
+          <label>Select Payment Method</label>
+          <div class="payment-methods">
+            <div class="payment-tab active" onclick="selectPaymentTab(this, 'UPI')">
+              <i class="fas fa-qrcode"></i> UPI / QR Code
+            </div>
+            <div class="payment-tab" onclick="selectPaymentTab(this, 'Card')">
+              <i class="fas fa-credit-card"></i> Card (Debit/Credit)
+            </div>
+            <div class="payment-tab" onclick="selectPaymentTab(this, 'NetBanking')">
+              <i class="fas fa-university"></i> Net Banking
+            </div>
+          </div>
+
+          <!-- Payment Details Panels -->
+          <div id="payMethodUPI" class="qr-box">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=upi://pay?pa=yuvachaitanyatrust@upi&pn=YUVA%20CHAITANYA%20CHARITABLE%20TRUST&mc=8398" alt="UPI QR Code" class="qr-code-img">
+            <p style="font-weight: 700; font-size: 0.9rem; color: var(--primary-dark);">UPI ID: yuvachaitanyatrust@upi</p>
+            <p style="font-size: 0.8rem; color: var(--text-muted);">Scan with Google Pay, PhonePe, Paytm, or BHIM UPI</p>
+          </div>
+
+          <div id="payMethodCard" style="display: none; padding: 15px; background: #f8fafc; border-radius: var(--radius-sm); margin-bottom: 15px;">
+            <div class="form-group">
+              <label>Card Number</label>
+              <input type="text" class="form-control" placeholder="4532 &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; 8921" maxlength="19">
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+              <div class="form-group">
+                <label>Expiry (MM/YY)</label>
+                <input type="text" class="form-control" placeholder="12/28">
+              </div>
+              <div class="form-group">
+                <label>CVV</label>
+                <input type="password" class="form-control" placeholder="&bull;&bull;&bull;" maxlength="4">
+              </div>
+            </div>
+          </div>
+
+          <div id="payMethodNet" style="display: none; padding: 15px; background: #f8fafc; border-radius: var(--radius-sm); margin-bottom: 15px;">
+            <div class="form-group">
+              <label>Select Your Bank</label>
+              <select class="form-control">
+                <option>State Bank of India (SBI)</option>
+                <option>HDFC Bank</option>
+                <option>ICICI Bank</option>
+                <option>Axis Bank</option>
+                <option>Union Bank of India</option>
+                <option>Punjab National Bank</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" id="donateSubmitBtn" class="btn btn-gold btn-block" style="padding: 14px; font-size: 1.05rem;">
+            <i class="fas fa-check-circle"></i> Complete Payment & Download 80G Receipt
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. OFFICIAL 80G TAX EXEMPTION RECEIPT MODAL -->
+  <div class="modal-overlay" id="receiptModal">
+    <div class="modal-card receipt-modal-card">
+      <div class="modal-header">
+        <h3><i class="fas fa-certificate"></i> Official 80G Tax Exemption Receipt</h3>
+        <button class="modal-close" onclick="closeModal('receiptModal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        
+        <div class="receipt-document" id="receiptPrintArea">
+          <!-- Receipt Header -->
+          <div class="receipt-header-logo">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <img src="images/logo.jpg" alt="YCC Seal" style="height: 60px; border-radius: 50%;">
+              <div>
+                <h3 style="font-size: 1.15rem; color: var(--primary-dark); font-weight: 800;">YUVA CHAITANYA CHARITABLE TRUST</h3>
+                <p style="font-size: 0.78rem; color: var(--text-dark);">Regd. No.: 278/2017 &bull; A Call to Serve (ESTD: 2017)</p>
+                <p style="font-size: 0.75rem; color: var(--text-muted);">Door No. 15-201, Sector-IV, Arilova, Visakhapatnam - 530040, AP, INDIA</p>
+              </div>
+            </div>
+            <div style="text-align: right;">
+              <div class="digital-stamp"><i class="fas fa-check-circle"></i> 80G VERIFIED</div>
+              <span style="font-size: 0.75rem; color: var(--text-muted); display: block; margin-top: 4px;">Approval No: AAATY2781F20174</span>
+            </div>
+          </div>
+
+          <div class="receipt-title-box">
+            <h2>DONATION RECEIPT (UNDER SECTION 80G OF I.T. ACT 1961)</h2>
+          </div>
+
+          <table class="receipt-table">
+            <tr>
+              <th>Receipt Serial No:</th>
+              <td id="rcpNo">YCC-80G-100293</td>
+              <th>Date of Donation:</th>
+              <td id="rcpDate">2026-08-08</td>
+            </tr>
+            <tr>
+              <th>Donor Full Name:</th>
+              <td id="rcpName">Venkata Ramana</td>
+              <th>Donor PAN Card:</th>
+              <td id="rcpPAN">ABCDE1234F</td>
+            </tr>
+            <tr>
+              <th>Cause Supported:</th>
+              <td id="rcpCause">Child Education Program</td>
+              <th>Payment Mode:</th>
+              <td id="rcpPayMethod">UPI / Online</td>
+            </tr>
+            <tr>
+              <th>Total Amount Donated:</th>
+              <td id="rcpAmount" style="font-weight: 800; font-size: 1.1rem; color: var(--primary-dark);">₹10,000</td>
+              <th>Eligible 80G Deduction (50%):</th>
+              <td id="rcpTaxDeduction" style="font-weight: 800; color: var(--success-green);">₹5,000</td>
+            </tr>
+            <tr>
+              <th>Amount in Words:</th>
+              <td colspan="3" id="rcpWords" style="font-weight: 600;">Ten Thousand Rupees Only</td>
+            </tr>
+          </table>
+
+          <p style="font-size: 0.78rem; color: var(--text-muted); line-height: 1.5; margin-top: 15px;">
+            * This donation receipt is generated digitally by Yuva Chaitanya Charitable Trust (Regd. No. 278/2017) and grants 50% exemption from Income Tax under Section 80G of Income Tax Act 1961. Retain this receipt along with your PAN for tax return filing.
+          </p>
+
+          <div class="receipt-footer-stamp">
+            <div>
+              <p style="font-size: 0.8rem; color: var(--text-dark);"><strong>Authorized Signatory:</strong></p>
+              <p style="font-size: 0.75rem; color: var(--text-muted);">Board of Trustees, Yuva Chaitanya Trust</p>
+            </div>
+            <div style="text-align: center;">
+              <img src="images/logo.jpg" alt="Seal" style="height: 45px; opacity: 0.8;">
+              <p style="font-size: 0.7rem; font-weight: 700; color: var(--primary-blue);">DIGITALLY SIGNED & SEALED</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 12px; margin-top: 20px;" class="no-print">
+          <button class="btn btn-primary btn-block" onclick="print80GReceipt()">
+            <i class="fas fa-print"></i> Print / Download 80G Receipt (PDF)
+          </button>
+          <button class="btn btn-outline" onclick="closeModal('receiptModal')">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. LOGIN MODAL -->
+  <div class="modal-overlay" id="loginModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3><i class="fas fa-sign-in-alt"></i> Donor Login</h3>
+        <button class="modal-close" onclick="closeModal('loginModal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form onsubmit="handleLogin(event)">
+          <div class="form-group">
+            <label for="loginEmail">Email Address</label>
+            <input type="email" id="loginEmail" class="form-control" required placeholder="Enter registered email">
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">Password</label>
+            <input type="password" id="loginPassword" class="form-control" required placeholder="Enter password">
+          </div>
+          <button type="submit" class="btn btn-primary btn-block" style="padding: 12px; font-size: 1rem;">
+            <i class="fas fa-lock"></i> Login to Portal
+          </button>
+        </form>
+
+        <p style="text-align: center; margin-top: 18px; font-size: 0.88rem; color: var(--text-muted);">
+          Don't have an account yet? <a href="javascript:void(0)" onclick="openRegisterModal()" style="color: var(--primary-blue); font-weight: 700;">Create Account</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. REGISTER ACCOUNT MODAL -->
+  <div class="modal-overlay" id="registerModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3><i class="fas fa-user-plus"></i> Create Donor Account</h3>
+        <button class="modal-close" onclick="closeModal('registerModal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form onsubmit="handleRegister(event)">
+          <div class="form-group">
+            <label for="regName">Full Legal Name</label>
+            <input type="text" id="regName" class="form-control" required placeholder="Enter full name as per PAN">
+          </div>
+
+          <div class="form-group">
+            <label for="regEmail">Email Address</label>
+            <input type="email" id="regEmail" class="form-control" required placeholder="name@example.com">
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+            <div class="form-group">
+              <label for="regPhone">Phone Number</label>
+              <input type="tel" id="regPhone" class="form-control" required placeholder="10-digit mobile">
+            </div>
+            <div class="form-group">
+              <label for="regPAN">PAN Number</label>
+              <input type="text" id="regPAN" class="form-control" placeholder="ABCDE1234F" style="text-transform: uppercase;" maxlength="10">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="regPassword">Create Password</label>
+            <input type="password" id="regPassword" class="form-control" required placeholder="At least 6 characters">
+          </div>
+
+          <button type="submit" class="btn btn-gold btn-block" style="padding: 12px; font-size: 1rem;">
+            <i class="fas fa-check"></i> Register Account
+          </button>
+        </form>
+
+        <p style="text-align: center; margin-top: 18px; font-size: 0.88rem; color: var(--text-muted);">
+          Already registered? <a href="javascript:void(0)" onclick="openLoginModal()" style="color: var(--primary-blue); font-weight: 700;">Login Here</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. USER DASHBOARD MODAL -->
+  <div class="modal-overlay" id="dashboardModal">
+    <div class="modal-card dashboard-modal-card">
+      <div class="modal-header">
+        <h3><i class="fas fa-user-circle"></i> Donor Profile & 80G Certificates</h3>
+        <button class="modal-close" onclick="closeModal('dashboardModal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        
+        <!-- User Info Cards Header -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 25px;">
+          <div style="background: #f1f5f9; padding: 15px; border-radius: var(--radius-md);">
+            <span style="font-size: 0.78rem; color: var(--text-muted);">Donor Name:</span>
+            <h4 id="dashUserName" style="color: var(--primary-dark); font-size: 1rem;">User</h4>
+            <p id="dashUserEmail" style="font-size: 0.78rem; color: var(--text-muted);">email@example.com</p>
+          </div>
+
+          <div style="background: #e0f2fe; padding: 15px; border-radius: var(--radius-md);">
+            <span style="font-size: 0.78rem; color: var(--primary-blue);">Total Contributions:</span>
+            <h4 id="dashTotalDonated" style="color: var(--primary-blue); font-size: 1.2rem; font-weight: 800;">₹0</h4>
+            <p style="font-size: 0.75rem; color: var(--text-muted);">PAN: <span id="dashUserPAN">ABCDE1234F</span></p>
+          </div>
+
+          <div style="background: #e6f4ea; padding: 15px; border-radius: var(--radius-md);">
+            <span style="font-size: 0.78rem; color: var(--success-green);">Est. Tax Savings (30%):</span>
+            <h4 id="dashTaxSavingsEst" style="color: var(--success-green); font-size: 1.2rem; font-weight: 800;">₹0</h4>
+            <p style="font-size: 0.75rem; color: var(--text-muted);">Under Sec 80G</p>
+          </div>
+        </div>
+
+        <h4 style="font-size: 1.05rem; color: var(--primary-dark); margin-bottom: 12px;">Your 80G Tax Exemption Receipts History</h4>
+        
+        <div class="history-table-wrap">
+          <table class="history-table">
+            <thead>
+              <tr>
+                <th>Receipt ID</th>
+                <th>Date</th>
+                <th>Donation</th>
+                <th>80G Deduction</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="dashHistoryBody">
+              <!-- Dynamically Populated -->
+            </tbody>
+          </table>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 25px;">
+          <button class="btn btn-outline btn-sm" onclick="logoutUser()">
+            <i class="fas fa-sign-out-alt"></i> Logout
+          </button>
+          <button class="btn btn-gold btn-sm" onclick="closeModal('dashboardModal'); triggerDonateModal(5000, 'General Trust Fund');">
+            <i class="fas fa-plus"></i> Make New Donation
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript File -->
+  <script src="js/app.js"></script>
+</body>
+</html>
